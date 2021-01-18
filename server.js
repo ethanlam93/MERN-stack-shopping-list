@@ -23,7 +23,7 @@ const mongoConfig = {
 }
 
 //connect to mongo DB
-mongoose.connect(db,mongoConfig)
+mongoose.connect(process.env.MONGODB_URI || db,mongoConfig)
 .then(() => console.log("MongoDB connected"))
 .catch( err => console.log(err))
 
